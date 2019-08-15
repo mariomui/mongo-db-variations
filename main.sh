@@ -50,7 +50,7 @@ function main () {
       echo true;
   else
     echo " $1's not running and it's not cached -> start the instance"
-    docker run -d --name "$1" -p $2:27017 mongo
+    docker run -v SimplePayDB:/data/db -d --name "$1" -p $2:27017 mongo
     if (test $(testIfContainerIsRunning "$1") == 1);
       then
         echo "Container is now running on port $2."
