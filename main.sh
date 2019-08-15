@@ -38,10 +38,10 @@ function main () {
       docker start "$1"
       if (test $(testIfContainerIsRunning "$1") == 1);
         then
-          echo "Container is now running."
+          echo "Container $1 is now running on port $2."
           echo true
         else
-          echo "Container unable to mend"
+          echo "Container $1 unable to mend"
           echo false
       fi
   elif (test $containerStatus == 3);
@@ -53,12 +53,12 @@ function main () {
     docker run -v SimplePayDB:/data/db -d --name "$1" -p $2:27017 mongo
     if (test $(testIfContainerIsRunning "$1") == 1);
       then
-        echo "Container is now running on port $2."
+        echo "Container $1 is now running on port $2."
         sleep 2
         # docker exec -it $1 bash -c "mongo admin --eval db.createUser({user: 'admin', pwd: 'PASS', roles: [{role: 'userAdminAnyDatabase', db: 'admin'}]})"
         echo true
       else
-        echo "Container unable to start"
+        echo "Container $1 unable to start"
         echo false
     fi
   fi
