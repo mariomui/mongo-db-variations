@@ -12,6 +12,8 @@ requirements (docker);
 `docker ps -a` to see al the volumes you have prepped.
 `docker rm -f <nameofInstance>` to remove something entirely
 `docker volume ls` to see all the volumes you have
+
+`./cleanup.sh <nameofContainer>` will remove the storage and the container
 ## caveats
 there isn't any persistent storage yet. It has a mounted volume but docker updates will kill it. And it's not the best practice way. 
 
