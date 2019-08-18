@@ -1,9 +1,9 @@
 source ./testIfContainerIsRunning.sh
 
-docker stop SimplePayDB
-if (test $(testIfContainerIsRunning SimplePayDB) == 0);
+docker stop $1
+if (test $(testIfContainerIsRunning $1) == 0);
   then
-    echo "SimplePayDB has stopped."
+    echo "$1 has stopped."
   else
-    echo "Error occurred when attempting to stop SimplePayDB"
+    echo "Error occurred when attempting to stop $1"
 fi

@@ -29,7 +29,7 @@ while getopts ':hnp:' option; do
 done
 shift $((OPTIND - 1))
 
-main SimplePayDB 29019
+main $1 $2
 # sleep 5
 # docker exec -it bash -c "mongo admin --host localhost -u USER_PREVIOUSLY_DEFINED \
 # -p PASS_YOU_PREVIOUSLY_DEFINED --eval \

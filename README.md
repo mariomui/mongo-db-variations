@@ -2,13 +2,16 @@
 different variations of a mongo build
 requirements (docker);
 # how to use
-`npm start`
 
 (running npm start will build it you the mongo instance) It should also tell you the port number)
 
-`npm start` to spin it back up again.
-`npm run stop` to stop the container.
+`npm start <nameOfInstance> <portOfInstance>` to spin it back up again.
+`npm run stop <nameOfInstance>` to stop the container.
 
+`docker ps` to see all the volumes you have spinning currently.
+`docker ps -a` to see al the volumes you have prepped.
+`docker rm -f <nameofInstance>` to remove something entirely
+`docker volume ls` to see all the volumes you have
 ## caveats
 there isn't any persistent storage yet. It has a mounted volume but docker updates will kill it. And it's not the best practice way. 
 
